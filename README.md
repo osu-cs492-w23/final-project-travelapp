@@ -11,6 +11,7 @@ Prototype: https://www.figma.com/proto/nBM4TCHWLUT35yAk4jImS0/traveling-app?node
 
 ### API Service Used in this APP
 Yelp API: https://docs.developer.yelp.com/reference/v3_business_search 
+
 Google map API: https://developers.google.com/maps/documentation/javascript/directions 
 
 ### Description of Pages: 
