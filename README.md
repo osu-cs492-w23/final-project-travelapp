@@ -10,7 +10,7 @@ A traveling app that fetches data from an API to display recommended restaurants
 Prototype: https://www.figma.com/proto/nBM4TCHWLUT35yAk4jImS0/traveling-app?node-id=56%3A3&scaling=scale-down&page-id=0%3A1&starting-point-node-id=56%3A3
 
 ### API Service Used in this APP
-Yelp API: https://docs.developer.yelp.com/reference/v3_business_search
+Yelp API: https://docs.developer.yelp.com/reference/v3_business_search 
 Google map API: https://developers.google.com/maps/documentation/javascript/directions 
 
 ### Description of Pages: 
@@ -26,5 +26,6 @@ This page needs to receive two parameters, namely destination and sorting. The p
 ### New feature
 Request location permissions https://developer.android.com/training/location/permissions 
 Please see Main Activity in Description of Pages for specific descriptions
+
 
 All icon in the prototype can be found in this page, https://fonts.google.com/icons 
