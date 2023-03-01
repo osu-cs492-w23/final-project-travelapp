@@ -55,32 +55,3 @@ Please see 4.a for specific descriptions
 Figma UI design
 Prototype: https://www.figma.com/proto/nBM4TCHWLUT35yAk4jImS0/traveling-app?node-id=56%3A3&scaling=scale-down&page-id=0%3A1&starting-point-node-id=56%3A3 
 All icon in the prototype can be found in this page, https://fonts.google.com/icons 
-
-Division of labor
-Main activity: Jianglong Yu
-Get start city name and destination from users
-Set different button to navigate to other three pages
-Integrate the other three pages. 
-Request permission to obtain a user's location
-Implement activity lifecycle methods and the ViewModel architecture
-
-
-Preference setting activity: Jianbo Ning
-Unit setting
-Sort setting
-Store the user setting
-
-Navigation activity: Karin Ocheretny
-Fetch the data from the google map, 
-Driving time and distance. This is just the basic, more related information may be obtained in the future
-Display the value fetched from the google map API.
-Navigation jump button. (implicit intent to launch google map app)
-This active need take three parameters: startCityName, destination, unit
-
-Restaurants list activity: Xin Zhang
-Fetch the data from yelp
-Received data from yelp API
-Display restaurants with address, rating, price and phone number by using RecycleView
-This is just the basic, more related information may be obtained in the future
-Display destination name and sorted method on the top
-This active need take two parameters: destination, sort_by
