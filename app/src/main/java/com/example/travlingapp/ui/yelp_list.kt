@@ -1,11 +1,12 @@
-package com.example.travlingapp
+package com.example.travlingapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.travlingapp.R
 
-class MainActivity : AppCompatActivity() {
+class yelp_list : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_yelp_list)
     }
 }
