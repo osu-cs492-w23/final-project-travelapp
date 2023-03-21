@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TRAVLING APP</string>
+
+    <string name="yelp_name">%1$s</string>
+    <string name="yelp_rating">%1$f</string>
+    <string name="yelp_location">%1$s</string>
+    <string name="yelp_phone">%1$s</string>
 </resources>
