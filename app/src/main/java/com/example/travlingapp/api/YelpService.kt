@@ -12,7 +12,6 @@ interface YelpService {
     @GET("businesses/search")
     fun  searchRestaurants(
         @Header("Authorization") authHeader: String = "HQMa3igY3Q1T99yVXGgtBi1vJ9BG1S5-CWfVIbFX8GRFnMwuI-pmwCyYLXqSu_wR4TFGkae88zOBt3eOKKdQw2LLq-DIFToB_nXhgZvkAdIAyZHawD5f4v4FZ4MGZHYx",
-        @Query ("term") searchTerm: String,
         @Query ("location") location: String,
         @Query ("limit") limit: Int,
     ) : Call<String>
