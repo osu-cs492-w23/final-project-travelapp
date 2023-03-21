@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TRAVLING APP</string>
+
+    <string name="welcome_string">WHERE WILL YOU GO NEXT?</string>
+    <string name="from">FROM</string>
+    <string name="to">TO</string>
+
+    <string name="search">LET\'S GO</string>
+
 </resources>

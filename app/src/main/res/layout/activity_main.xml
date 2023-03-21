@@ -24,11 +24,86 @@
         android:background="#771A1A1A"
         app:layout_constraintBottom_toBottomOf="@id/background_image"
         app:layout_constraintEnd_toEndOf="@id/background_image"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/background_image"
-        app:layout_constraintTop_toTopOf="@id/background_image" />
+        app:layout_constraintTop_toTopOf="@id/background_image"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="337dp"
+        android:layout_height="93dp"
+        android:gravity="center"
+        android:text="@string/welcome_string"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <EditText
+        android:id="@+id/input_box_from"
+        android:layout_width="197dp"
+        android:layout_height="45dp"
+        android:background="@drawable/input_box_rounded"
+        android:hint="@string/from"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.383"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <EditText
+        android:id="@+id/input_box_to"
+        android:layout_width="262dp"
+        android:layout_height="45dp"
+        android:background="@drawable/input_box_rounded"
+        android:hint="@string/to"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/background_image"
+        app:layout_constraintVertical_bias="0.413" />
 
 
+    <Button
+        android:id="@+id/btn_search"
+        style="?attr/materialButtonStyle"
+        android:layout_width="179dp"
+        android:layout_height="49dp"
+        android:layout_marginHorizontal="4dp"
+        android:background="@drawable/input_box_rounded"
+        android:text="@string/search"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.768" />
 
+    <ImageButton
+        style="?attr/materialButtonStyle"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/input_box_rounded"
+        android:src="@drawable/baseline_my_location_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/background_image"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toEndOf="@+id/input_box_from"
+        app:layout_constraintTop_toTopOf="@+id/background_image"
+        app:layout_constraintVertical_bias="0.333" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
