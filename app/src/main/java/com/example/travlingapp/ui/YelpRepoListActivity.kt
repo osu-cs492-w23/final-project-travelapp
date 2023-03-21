@@ -43,7 +43,7 @@ class YelpRepoListActivity : AppCompatActivity() {
         searchResultListRV.layoutManager = LinearLayoutManager(this)
         searchResultListRV.setHasFixedSize(true)
         searchResultListRV.adapter = yelpRepoAdapter
-
+        supportActionBar?.title = location
         doRepoSearch(location)
         Log.d("MainActivity", "location: ${intent.getSerializableExtra(EXTRA_YELP_REPO) as String}")
     }

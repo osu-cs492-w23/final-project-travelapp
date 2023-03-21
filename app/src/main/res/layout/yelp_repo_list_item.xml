@@ -21,22 +21,50 @@
             app:layout_constraintBaseline_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
+
         <TextView
             android:id="@+id/tv_name"
-            android:text="name"
-            android:textAppearance="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:maxLines="1"
+            android:text="name"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/iv_yelp"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/baseline_star_24"
+            app:layout_constraintStart_toEndOf="@+id/iv_yelp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            />
 
         <TextView
             android:id="@+id/tv_rating"
             android:text="4.0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/iv_yelp"
+            app:layout_constraintStart_toEndOf="@+id/iv_rating"
             app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/baseline_home_work_24"
+            app:layout_constraintStart_toEndOf="@+id/iv_yelp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rating"
             />
 
         <TextView
@@ -44,16 +72,31 @@
             android:text="195 st"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/iv_yelp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_rating"/>
+            app:layout_constraintStart_toEndOf="@+id/iv_location"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rating"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"/>
 
+        <ImageView
+            android:id="@+id/iv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/baseline_local_phone_24"
+            app:layout_constraintStart_toEndOf="@+id/iv_yelp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location"
+            />
+        
         <TextView
             android:id="@+id/tv_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="9616162131"
-            app:layout_constraintStart_toEndOf="@+id/iv_yelp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_location"/>
+            app:layout_constraintStart_toEndOf="@+id/iv_phone"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

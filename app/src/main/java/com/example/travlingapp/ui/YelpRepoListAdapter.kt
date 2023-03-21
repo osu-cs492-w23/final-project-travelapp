@@ -53,8 +53,9 @@ class YelpRepoListAdapter : RecyclerView.Adapter<YelpRepoListAdapter.YelpRepoVie
             Log.d("MainActivity", "url---->${yelpRepo.image_url}")
             Glide.with(ctx)
                 .load(yelpRepo.image_url)
-                .placeholder(R.drawable.ic_launcher_background)
-                .override(600,400)
+                .centerCrop()
+                .placeholder(R.drawable.baseline_image_24)
+                .override(400,300)
                 .into(imageIV)
         }
     }
