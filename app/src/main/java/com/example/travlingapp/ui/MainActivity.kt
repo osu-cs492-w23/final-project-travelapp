@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import com.example.travlingapp.R
 import com.google.android.material.progressindicator.CircularProgressIndicator
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +21,13 @@ class MainActivity : AppCompatActivity() {
         val inputBoxTo: EditText = findViewById(R.id.input_box_to)
 
         val searchBtn: Button = findViewById(R.id.btn_search)
+        val getLocationBtn: ImageButton = findViewById(R.id.btn_location)
+
+        //get user loction
+        getLocationBtn.setOnClickListener {
+            inputBoxFrom.setText("corvallis")
+            Log.d(TAG, "get location")
+        }
 
 
         searchBtn.setOnClickListener {
