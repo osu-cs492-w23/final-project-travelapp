@@ -27,7 +27,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/background_image"
         app:layout_constraintTop_toTopOf="@id/background_image"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView"
@@ -106,5 +106,31 @@
         app:layout_constraintTop_toTopOf="@+id/background_image"
         app:layout_constraintVertical_bias="0.333" />
 
+    <ImageButton
+        android:id="@+id/btn_restaurant"
+        android:layout_width="87dp"
+        android:layout_height="56dp"
+        android:background="@drawable/f_restaurant_btn_style"
+        android:src="@drawable/baseline_restaurant_48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/background_image"
+        app:layout_constraintVertical_bias="0.58"
+        app:tint="@color/not_very_black" />
+
+    <ImageButton
+        android:id="@+id/btn_driving"
+        android:layout_width="87dp"
+        android:layout_height="56dp"
+        android:background="@drawable/t_driving_btn_style"
+        android:src="@drawable/baseline_directions_car_48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/background_image"
+        app:layout_constraintHorizontal_bias="0.373"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/background_image"
+        app:layout_constraintVertical_bias="0.58" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
