@@ -23,8 +23,8 @@ class DrivingInfoActivity : AppCompatActivity() {
     private val googleMapService = GoogleMapService.create()
     private val GoogleAPIKEY = "AIzaSyA1xiehRaRuaAgCxlbFb-V08NamxWGe-7s"
     private var results: DistanceResult? = null
-    private var distance = ""
-    private var time = ""
+    lateinit var distance: String
+    lateinit var time: String
     private var originCity: String = "Corvallis"
     private var destCity: String = "Portland"
 
