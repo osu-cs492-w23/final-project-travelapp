@@ -1,4 +1,4 @@
-package com.example.travlingapp
+package com.example.travlingapp.ui
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -12,6 +12,7 @@ import com.example.travlingapp.data.DistanceResult
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.example.travlingapp.R
 
 const val EXTRA_DRIVE = "DRIVING_INFO"
 
@@ -48,10 +49,6 @@ class DrivingInfoActivity : AppCompatActivity() {
                     Log.d("MainActivity", "fail $t")
                 }
             })
-
-
-
-
         }
 
 
