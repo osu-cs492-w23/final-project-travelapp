@@ -20,11 +20,9 @@ import com.example.travlingapp.R
 import com.google.android.gms.location.*
 import java.util.Locale
 import android.content.Intent
-import android.os.PersistableBundle
 import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
