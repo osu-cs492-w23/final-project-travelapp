@@ -18,14 +18,14 @@ class SettingActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE)
         sharedPreferences.apply {
             getString("unit",null)?.let {
-                if (it == "km") {
+                if (it == "metric") {
                     km.visibility = View.VISIBLE
                 } else {
                     mile.visibility = View.VISIBLE
                 }
             }
             getString("rankingBy",null)?.let {
-                if (it == "ratting") {
+                if (it == "rating") {
                     ratting.visibility = View.VISIBLE
                 } else {
                     review_count.visibility = View.VISIBLE
@@ -38,13 +38,13 @@ class SettingActivity : AppCompatActivity() {
         km_c.setOnClickListener {
             km.visibility = View.VISIBLE
             mile.visibility = View.INVISIBLE
-            shareEdit.putString("unit","km")
+            shareEdit.putString("unit","metric")
             shareEdit.apply()
         }
         mile_c.setOnClickListener {
             km.visibility = View.INVISIBLE
             mile.visibility = View.VISIBLE
-            shareEdit.putString("unit","mile")
+            shareEdit.putString("unit","imperial")
             shareEdit.apply()
         }
 
@@ -52,13 +52,13 @@ class SettingActivity : AppCompatActivity() {
         ratting_c.setOnClickListener {
             ratting.visibility = View.VISIBLE
             review_count.visibility = View.INVISIBLE
-            shareEdit.putString("rankingBy","ratting")
+            shareEdit.putString("rankingBy","rating")
             shareEdit.apply()
         }
         rc_c.setOnClickListener {
             ratting.visibility = View.INVISIBLE
             review_count.visibility = View.VISIBLE
-            shareEdit.putString("rankingBy","reviewCount")
+            shareEdit.putString("rankingBy","review_count")
             shareEdit.apply()
         }
 
