@@ -14,12 +14,12 @@ import android.graphics.PorterDuff
 import android.location.Geocoder
 import android.location.LocationManager
 import android.os.Looper
-import android.provider.ContactsContract.CommonDataKinds.Im
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.travlingapp.R
 import com.google.android.gms.location.*
 import java.util.Locale
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
@@ -74,8 +74,19 @@ class MainActivity : AppCompatActivity() {
             val originCity = inputBoxFrom.text.toString()
             val destinationCity = inputBoxTo.text.toString()
             Log.d(TAG, "origin city: $originCity, destination city: $destinationCity, driving: $drving_option")
+            if (drving_option) {
+                drivingInfoClick(originCity, destinationCity)
+            }
         }
+    }
 
+    //intent to driving page
+    private fun drivingInfoClick(fromCityName: String, toCityName: String) {
+        val intent = Intent(this, DrivingInfoActivity::class.java).apply {
+            putExtra(EXTRA_DRIVE_FROM, fromCityName)
+            putExtra(EXTRA_DRIVE_TO, toCityName)
+        }
+        startActivity(intent)
     }
 
     // for getting user location

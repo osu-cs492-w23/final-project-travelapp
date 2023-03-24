@@ -14,7 +14,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import com.example.travlingapp.R
 
-const val EXTRA_DRIVE = "DRIVING_INFO"
+const val EXTRA_DRIVE_FROM = "DRIVING_INFO_FROM"
+const val EXTRA_DRIVE_TO = "DRIVING_INFO_TO"
 
 class DrivingInfoActivity : AppCompatActivity() {
     private val googleMapService = GoogleMapService.create()
@@ -28,6 +29,11 @@ class DrivingInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drive_info)
+
+        if(intent != null && intent.hasExtra(EXTRA_DRIVE_FROM) && intent.hasExtra(EXTRA_DRIVE_TO)){
+            originCity = intent.getSerializableExtra(EXTRA_DRIVE_FROM) as String
+            destCity = intent.getSerializableExtra(EXTRA_DRIVE_TO) as String
+        }
 
         googleMapService.loadDistanceMatrix(originCity, destCity, GoogleAPIKEY)
             .enqueue(object : Callback<DistanceResult> {
@@ -53,21 +59,19 @@ class DrivingInfoActivity : AppCompatActivity() {
 
 
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.driving_info_detail,menu)
-        return super.onCreateOptionsMenu(menu)
-    }
+        override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+            menuInflater.inflate(R.menu.driving_info_detail,menu)
+            return super.onCreateOptionsMenu(menu)
+        }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.action_map){
-            val intent = Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("geo:44.564568,-123.262047")
-            }
-            if (intent.resolveActivity(packageManager) != null) {
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            if(item.itemId == R.id.action_map){
+                val intent = Intent(Intent.ACTION_VIEW).apply {
+                    data = Uri.parse("geo:44.564568,-123.262047")
+                }
                 startActivity(intent)
             }
+            return super.onOptionsItemSelected(item)
         }
-        return super.onOptionsItemSelected(item)
-    }
 
     }
