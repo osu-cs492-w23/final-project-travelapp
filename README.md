@@ -4,7 +4,8 @@
 ### Description
 A traveling app that fetches data from an API to display recommended restaurants and provide navigation service with embedded GPS or use third party GPS service, like google map and apple map. This application has a search functionality that enables users to search for restaurants based on their input location. GPS service ensures users can easily locate the restaurant they are interested in visiting. Thus, search and navigation are the core features in our app. We might come up with some minor features later to make our application more attractive and have better user experience.
 
-
+### Figma UI design
+Prototype: https://www.figma.com/proto/nBM4TCHWLUT35yAk4jImS0/traveling-app?node-id=56%3A3&scaling=scale-down&page-id=0%3A1&starting-point-node-id=56%3A3
 
 ### API Service Used in this APP
 Yelp API: https://docs.developer.yelp.com/reference/v3_business_search 
