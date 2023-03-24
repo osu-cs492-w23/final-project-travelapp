@@ -1,5 +1,6 @@
 package com.example.travlingapp.ui
 import android.content.Intent
+import android.location.Geocoder
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -65,10 +66,17 @@ class DrivingInfoActivity : AppCompatActivity() {
         }
 
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            val geocoder = Geocoder(this)
+            val coordListFrom = geocoder.getFromLocationName(originCity, 1)!![0]
+            val coordListTo = geocoder.getFromLocationName(destCity, 1)!![0]
             if(item.itemId == R.id.action_map){
-                val intent = Intent(Intent.ACTION_VIEW).apply {
-                    data = Uri.parse("geo:44.564568,-123.262047")
-                }
+                val navigationUrl = getString(R.string.geo_uri)
+                val geoUri = String.format(navigationUrl,
+                    coordListFrom.latitude,
+                    coordListFrom.longitude,
+                    coordListTo.latitude,
+                    coordListTo.longitude)
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(geoUri))
                 startActivity(intent)
             }
             return super.onOptionsItemSelected(item)

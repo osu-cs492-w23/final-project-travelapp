@@ -7,4 +7,8 @@
 
     <string name="search">LET\'S GO</string>
 
+    <string name="geo_uri">http://maps.google.com/maps?saddr=%1\$f,%2\$f&amp;daddr=%3\$f,%4\$f&amp;mode=driving</string>
+
+
+
 </resources>
