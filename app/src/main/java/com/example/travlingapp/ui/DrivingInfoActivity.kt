@@ -1,4 +1,5 @@
 package com.example.travlingapp.ui
+import android.content.Context
 import android.content.Intent
 import android.location.Geocoder
 import android.net.Uri
@@ -35,23 +36,22 @@ class DrivingInfoActivity : AppCompatActivity() {
             originCity = intent.getSerializableExtra(EXTRA_DRIVE_FROM) as String
             destCity = intent.getSerializableExtra(EXTRA_DRIVE_TO) as String
         }
+        val sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE)
+        val units = sharedPreferences.getString("unit",null)
 
-        googleMapService.loadDistanceMatrix(originCity, destCity, GoogleAPIKEY)
+        googleMapService.loadDistanceMatrix(originCity, destCity, units, GoogleAPIKEY)
             .enqueue(object : Callback<DistanceResult> {
                 override fun onResponse(
                     call: Call<DistanceResult>,
                     response: Response<DistanceResult>
                 ) {
-
                     distance = response.body()!!.rows[0].elements[0].distance.text
                     time =  response.body()!!.rows[0].elements[0].duration.text
                     findViewById<TextView>(R.id.tv_driving_distance).text = distance
                     findViewById<TextView>(R.id.tv_driving_time).text = time
                     findViewById<TextView>(R.id.tv_origin).text = originCity
                     findViewById<TextView>(R.id.tv_destination).text = destCity
-
                 }
-
                 override fun onFailure(call: Call<DistanceResult>, t: Throwable) {
                     Log.d("MainActivity", "fail $t")
                 }

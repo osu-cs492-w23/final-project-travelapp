@@ -13,7 +13,7 @@ interface GoogleMapService {
     fun loadDistanceMatrix(
        @Query("origins") origin: String?,
        @Query("destinations") destination: String?,
-//       @Query("units") units: String?,
+       @Query("units") units: String?,
        @Query("key") apikey: String?
    ):   Call<DistanceResult>
 
