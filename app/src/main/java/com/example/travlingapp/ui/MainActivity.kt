@@ -20,6 +20,8 @@ import com.example.travlingapp.R
 import com.google.android.gms.location.*
 import java.util.Locale
 import android.content.Intent
+import android.view.Menu
+import android.view.MenuItem
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
@@ -48,6 +50,12 @@ class MainActivity : AppCompatActivity() {
         val restaurantBtn : ImageButton = findViewById(R.id.btn_restaurant)
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+
+        //get preference setting
+        val sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE)
+        val units = sharedPreferences.getString("unit",null)
+        val rankingBy = sharedPreferences.getString("rankingBy",null)
+
         //get user loction
         getLocationBtn.setOnClickListener {
             getLocation()
@@ -76,6 +84,7 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "origin city: $originCity, destination city: $destinationCity, driving: $drving_option")
             if (drving_option) {
                 drivingInfoClick(originCity, destinationCity)
+                Log.d(TAG, "$units, $rankingBy")
             }
         }
     }
@@ -160,6 +169,21 @@ class MainActivity : AppCompatActivity() {
         val addresses = geocoder.getFromLocation(lat, long, 1)
 
         return addresses!!.get(0).locality
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.activity_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_setting -> {
+                startActivity(Intent(this, SettingActivity::class.java))
+                return true
+            }
+        }
+        return true
     }
 
     override fun onRequestPermissionsResult(
