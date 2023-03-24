@@ -5,4 +5,5 @@
     <string name="yelp_rating">%1$.1f</string>
     <string name="yelp_location">%1$s</string>
     <string name="yelp_phone">%1$s</string>
+    <string name="error_message">Error making API call: %1$s</string>
 </resources>
