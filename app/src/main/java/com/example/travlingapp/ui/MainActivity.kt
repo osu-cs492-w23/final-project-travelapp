@@ -1,15 +1,16 @@
-package com.example.travlingapp
+package com.example.travlingapp.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.example.travlingapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_main)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -23,7 +24,6 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, SettingActivity::class.java))
                 return true
             }
-            else -> {}
         }
         return true
     }

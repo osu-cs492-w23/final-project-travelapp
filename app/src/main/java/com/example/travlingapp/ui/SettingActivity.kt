@@ -1,16 +1,17 @@
-package com.example.travlingapp
+package com.example.travlingapp.ui
 
 import android.content.Context
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.travlingapp.R
+import kotlinx.android.synthetic.main.activity_settings.*
 
 class SettingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_settings)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -67,12 +68,7 @@ class SettingActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
-
-        // 如果点击了返回按钮
-
-        // 如果点击了返回按钮
         if (id == android.R.id.home) {
-            // 关闭当前Activity
             finish()
             return true
         }
