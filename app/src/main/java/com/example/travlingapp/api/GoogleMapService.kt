@@ -8,14 +8,12 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface GoogleMapService {
-
-    //api key AIzaSyA1xiehRaRuaAgCxlbFb-V08NamxWGe-7s
     //https://maps.googleapis.com/maps/api/distancematrix/json?origins=Seattle&destinations=San+Francisco&key=YOUR_API_KEY
-
    @GET("distancematrix/json?")
     fun loadDistanceMatrix(
        @Query("origins") origin: String?,
        @Query("destinations") destination: String?,
+//       @Query("units") units: String?,
        @Query("key") apikey: String?
    ):   Call<DistanceResult>
 
@@ -28,8 +26,5 @@ interface GoogleMapService {
                 .build()
                 .create(GoogleMapService::class.java)
         }
-
     }
-
-
 }
