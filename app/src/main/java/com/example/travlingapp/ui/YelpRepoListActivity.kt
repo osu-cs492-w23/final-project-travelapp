@@ -76,39 +76,8 @@ class YelpRepoListActivity : AppCompatActivity() {
                 errorMessageTV.text = getString(R.string.error_message,errorMessage)
             }
         }
-
-        viewModel.loadSearchResults(location)
+        val sortBy = "rating"
+        viewModel.loadSearchResults(location, sortBy)
         Log.d("MainActivity", "location: ${intent.getSerializableExtra(EXTRA_YELP_REPO) as String}")
     }
-
-//        private fun doRepoSearch(location: String) {
-//        loadingIndicator.visibility = View.VISIBLE
-//        yelpService.searchRestaurants(location, "Bearer $API_KEY", 30, "rating")
-//            .enqueue(object : Callback<YelpSearchResults> {
-//                override fun onResponse(call: Call<YelpSearchResults>, response: Response<YelpSearchResults>) {
-//                    loadingIndicator.visibility = View.INVISIBLE
-//
-//                    Log.d("MainActivity", "Status code: ${response.body()}")
-//                    if (response.isSuccessful) {
-//                        yelpRepoAdapter.updateRepoList(response.body()?.businesses)
-//                        searchResultListRV.visibility = View.VISIBLE
-//                        errorMessageTV.visibility = View.INVISIBLE
-//                    } else {
-//                        errorMessageTV.text = "Error: ${response.errorBody()?.string()}"
-//                        searchResultListRV.visibility = View.INVISIBLE
-//                        errorMessageTV.visibility = View.VISIBLE
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<YelpSearchResults>, t: Throwable) {
-//                    errorMessageTV.text = "Error: ${t.message}"
-//                    loadingIndicator.visibility = View.INVISIBLE
-//                    searchResultListRV.visibility = View.INVISIBLE
-//                    errorMessageTV.visibility = View.VISIBLE
-//                    Log.d("MainActivity", "Error making API call: ${t.message}")
-//                }
-//            })
-//    }
-
-
 }

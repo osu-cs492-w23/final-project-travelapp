@@ -23,11 +23,11 @@ class YelpSearchViewModel: ViewModel() {
     val loadingStatus: LiveData<LoadingStatus> = _loadingStatus
 
 
-    fun loadSearchResults(query: String){
+    fun loadSearchResults(query: String, sortBy: String){
         viewModelScope.launch{
             _loadingStatus.value = LoadingStatus.LOADING
 
-            val result = repository.loadRestaurantsSearch(query)
+            val result = repository.loadRestaurantsSearch(query, sortBy)
             _searchResults.value = result.getOrNull()
             _errorMessage.value = result.exceptionOrNull()?.message
             _loadingStatus.value = when(result.isSuccess){
