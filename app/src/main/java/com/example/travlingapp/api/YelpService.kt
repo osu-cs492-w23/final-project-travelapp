@@ -14,6 +14,8 @@ interface YelpService {
         @Query ("location") location: String,
         @Header("Authorization") authHeader: String = "HQMa3igY3Q1T99yVXGgtBi1vJ9BG1S5-CWfVIbFX8GRFnMwuI-pmwCyYLXqSu_wR4TFGkae88zOBt3eOKKdQw2LLq-DIFToB_nXhgZvkAdIAyZHawD5f4v4FZ4MGZHYx",
         @Query ("limit") limit: Int = 30,
+        @Query("sort_by") sort_bY: String,
+        //best_match, rating, review_count, distance
     ) : Call<YelpSearchResults>
 
 

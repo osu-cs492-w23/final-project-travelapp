@@ -50,7 +50,7 @@ class YelpRepoListActivity : AppCompatActivity() {
 
         private fun doRepoSearch(location: String) {
         loadingIndicator.visibility = View.VISIBLE
-        yelpService.searchRestaurants(location, "Bearer $API_KEY", 30)
+        yelpService.searchRestaurants(location, "Bearer $API_KEY", 30, "rating")
             .enqueue(object : Callback<YelpSearchResults> {
                 override fun onResponse(call: Call<YelpSearchResults>, response: Response<YelpSearchResults>) {
                     loadingIndicator.visibility = View.INVISIBLE
