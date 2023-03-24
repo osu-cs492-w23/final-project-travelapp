@@ -9,6 +9,9 @@
 
     <string name="geo_uri">http://maps.google.com/maps?saddr=%1\$f,%2\$f&amp;daddr=%3\$f,%4\$f&amp;mode=driving</string>
 
-
-
+    <string name="yelp_name">%1$s</string>
+    <string name="yelp_rating">%1$.1f</string>
+    <string name="yelp_location">%1$s</string>
+    <string name="yelp_phone">%1$s</string>
+    <string name="error_message">Error making API call: %1$s</string>
 </resources>

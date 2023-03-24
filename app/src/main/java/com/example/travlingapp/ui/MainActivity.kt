@@ -20,13 +20,17 @@ import com.example.travlingapp.R
 import com.google.android.gms.location.*
 import java.util.Locale
 import android.content.Intent
+import android.os.PersistableBundle
+import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
 
     private lateinit var inputBoxFrom: EditText
+    private lateinit var inputBoxTo: EditText
 
     // for get user location
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
@@ -35,13 +39,12 @@ class MainActivity : AppCompatActivity() {
 
     private var drving_option : Boolean = true
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         inputBoxFrom= findViewById(R.id.input_box_from)
-        val inputBoxTo: EditText = findViewById(R.id.input_box_to)
+        inputBoxTo = findViewById(R.id.input_box_to)
 
         val searchBtn: Button = findViewById(R.id.btn_search)
         val getLocationBtn: ImageButton = findViewById(R.id.btn_location)
@@ -50,11 +53,6 @@ class MainActivity : AppCompatActivity() {
         val restaurantBtn : ImageButton = findViewById(R.id.btn_restaurant)
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
-
-        //get preference setting
-        val sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE)
-        val units = sharedPreferences.getString("unit",null)
-        val rankingBy = sharedPreferences.getString("rankingBy",null)
 
         //get user loction
         getLocationBtn.setOnClickListener {
@@ -84,18 +82,28 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "origin city: $originCity, destination city: $destinationCity, driving: $drving_option")
             if (drving_option) {
                 drivingInfoClick(originCity, destinationCity)
-                Log.d(TAG, "$units, $rankingBy")
+            } else {
+                restaurantInfoClick(destinationCity)
             }
         }
     }
 
     //intent to driving page
     private fun drivingInfoClick(fromCityName: String, toCityName: String) {
-        val intent = Intent(this, DrivingInfoActivity::class.java).apply {
-            putExtra(EXTRA_DRIVE_FROM, fromCityName)
-            putExtra(EXTRA_DRIVE_TO, toCityName)
+        val intent = Intent(this, DrivingInfoActivity::class.java)
+        if (!TextUtils.isEmpty(toCityName) && !TextUtils.isEmpty(fromCityName)) {
+            intent.putExtra(EXTRA_DRIVE_FROM, fromCityName)
+            intent.putExtra(EXTRA_DRIVE_TO, toCityName)
+            startActivity(intent)
         }
-        startActivity(intent)
+    }
+
+    private fun restaurantInfoClick(toCityName: String) {
+        val intent = Intent(this, YelpRepoListActivity::class.java)
+        if(!TextUtils.isEmpty(toCityName)){
+            intent.putExtra(EXTRA_YELP_REPO, toCityName)
+            startActivity(intent)
+        }
     }
 
     // for getting user location

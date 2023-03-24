@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:orientation = "horizontal">
+
+        <ImageView
+            android:id="@+id/iv_yelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars"
+            app:layout_constraintBaseline_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+
+            android:text="name"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/iv_yelp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/baseline_star_24"
+            app:layout_constraintStart_toEndOf="@+id/iv_yelp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            />
+
+        <TextView
+            android:id="@+id/tv_rating"
+            android:text="4.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/iv_rating"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/baseline_home_work_24"
+            app:layout_constraintStart_toEndOf="@+id/iv_yelp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rating"
+            />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:text="195 st"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/iv_location"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rating"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"/>
+
+        <ImageView
+            android:id="@+id/iv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/baseline_local_phone_24"
+            app:layout_constraintStart_toEndOf="@+id/iv_yelp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location"
+            />
+        
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9616162131"
+            app:layout_constraintStart_toEndOf="@+id/iv_phone"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>
