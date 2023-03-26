@@ -79,7 +79,7 @@ class YelpRepoListActivity : AppCompatActivity() {
         }
 
         val sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE)
-        val rankingBy = sharedPreferences.getString("rankingBy",null)
+        val rankingBy = sharedPreferences.getString("rankingBy", "rating")
         viewModel.loadSearchResults(location, rankingBy!!)
         Log.d("MainActivity", "location: ${intent.getSerializableExtra(EXTRA_YELP_REPO) as String}")
     }

@@ -17,6 +17,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "GoogleAPIKEY", GoogleAPIKEY)
+        buildConfigField("String", "YELP_API_KEY", YELP_API_KEY)
     }
 
     buildTypes {

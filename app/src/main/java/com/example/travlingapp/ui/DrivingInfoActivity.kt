@@ -15,13 +15,14 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import com.example.travlingapp.R
+import com.example.travlingapp.BuildConfig
 
 const val EXTRA_DRIVE_FROM = "DRIVING_INFO_FROM"
 const val EXTRA_DRIVE_TO = "DRIVING_INFO_TO"
+const val GoogleAPIKEY = BuildConfig.GoogleAPIKEY
 
 class DrivingInfoActivity : AppCompatActivity() {
     private val googleMapService = GoogleMapService.create()
-    private val GoogleAPIKEY = "AIzaSyA1xiehRaRuaAgCxlbFb-V08NamxWGe-7s"
     private var results: DistanceResult? = null
     lateinit var distance: String
     lateinit var time: String
@@ -37,7 +38,7 @@ class DrivingInfoActivity : AppCompatActivity() {
             destCity = intent.getSerializableExtra(EXTRA_DRIVE_TO) as String
         }
         val sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE)
-        val units = sharedPreferences.getString("unit",null)
+        val units = sharedPreferences.getString("unit", "metric")
 
         googleMapService.loadDistanceMatrix(originCity, destCity, units, GoogleAPIKEY)
             .enqueue(object : Callback<DistanceResult> {
