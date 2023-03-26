@@ -9,7 +9,11 @@
 ### Description
 A traveling app that fetches data from an API to display recommended restaurants and provide navigation service with embedded GPS or use third party GPS service, like google map and apple map. This application has a search functionality that enables users to search for restaurants based on their input location. GPS service ensures users can easily locate the restaurant they are interested in visiting. Thus, search and navigation are the core features in our app. We might come up with some minor features later to make our application more attractive and have better user experience.
 
-### App ScreenShot
+### App Demo
+driving function:  
+[drving gif](driving.gif)  
+restaurant function:  
+[restaurant gif](restaurant.gif)  
 
 
 ### Figma UI design
