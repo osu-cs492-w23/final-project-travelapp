@@ -8,8 +8,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface GoogleMapService {
-
-    //api key AIzaSyA1xiehRaRuaAgCxlbFb-V08NamxWGe-7s
     //https://maps.googleapis.com/maps/api/distancematrix/json?origins=Seattle&destinations=San+Francisco&key=YOUR_API_KEY
 
    @GET("distancematrix/json?")
