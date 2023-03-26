@@ -14,7 +14,7 @@ class YelpRepository(
     private var currentSort: String? = null
     private var cachedYelp: List<YelpRepo>? = null
 
-    private val API_KEY = "HQMa3igY3Q1T99yVXGgtBi1vJ9BG1S5-CWfVIbFX8GRFnMwuI-pmwCyYLXqSu_wR4TFGkae88zOBt3eOKKdQw2LLq-DIFToB_nXhgZvkAdIAyZHawD5f4v4FZ4MGZHYx"
+    private val API_KEY = ""
     suspend fun loadRestaurantsSearch(location:String, sort: String = "rating"): Result<List<YelpRepo>> {
         return if(location == currentLocation && sort == currentSort && cachedYelp != null){
             Result.success(cachedYelp!!)
