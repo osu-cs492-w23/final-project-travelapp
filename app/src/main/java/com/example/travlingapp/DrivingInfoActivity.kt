@@ -17,7 +17,7 @@ const val EXTRA_DRIVE = "DRIVING_INFO"
 
 class DrivingInfoActivity : AppCompatActivity() {
     private val googleMapService = GoogleMapService.create()
-    private val GoogleAPIKEY = "AIzaSyA1xiehRaRuaAgCxlbFb-V08NamxWGe-7s"
+    private val GoogleAPIKEY = ""
     private var results: DistanceResult? = null
     private var distance = ""
     private var time = ""
