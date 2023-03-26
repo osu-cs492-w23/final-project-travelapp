@@ -13,7 +13,7 @@ A traveling app that fetches data from an API to display recommended restaurants
 Driving function:  
 ![drivingCap](driving.gif)  
 
-restaurant function:  
+Restaurant function:  
 ![restaurantCap](restaurant.gif)
 
 
